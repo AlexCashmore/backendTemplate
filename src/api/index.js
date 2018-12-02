@@ -18,7 +18,7 @@ export default ({ config, db }) => {
 	api.get('/Document',(req,res)=>{
 		res.send('hello!');
 	});
-	api.post('/createDocument',createDocument);
+	api.post('/createDocument', createDocument);
     api.get('/Documents/:shortId',  fetchDocument);
 
 	return api;

@@ -3,7 +3,7 @@
  */
 import controller from './controller';
 import presenter from './presenter';
-import FetchDocumentByShortIdAction from "./actions/fetchDocumentAction";
+import FetchDocumentByShortIdAction from "../actions/fetchDocumentAction";
 
 export default {
   build({ documentStore }) {

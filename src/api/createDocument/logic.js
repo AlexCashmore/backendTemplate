@@ -3,7 +3,7 @@
  */
 import controller from './controller';
 import presenter from './presenter';
-import CreateDocumentAction from './actions/CreateDocumentAction';
+import CreateDocumentAction from '../actions/CreateDocumentAction';
 
 export default {
   build({ documentStore }) {
