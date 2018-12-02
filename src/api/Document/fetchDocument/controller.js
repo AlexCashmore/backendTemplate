@@ -8,7 +8,6 @@ and then pass that data structure to an Interactor object
 * don’t let your controllers know anything about the business rules.  */
 
 export default function controller(params) {
-  console.log(params);
   if (
     (!params.shortId && params.shortId !== '')
   ) {

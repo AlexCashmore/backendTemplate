@@ -12,7 +12,6 @@ export default ({ config, db }) => {
 
 	// perhaps expose some API metadata at the root
 	api.get('/', (req, res) => {
-		console.log('hello');
 		res.send('welcome');
 	});
 	api.get('/Document',(req,res)=>{

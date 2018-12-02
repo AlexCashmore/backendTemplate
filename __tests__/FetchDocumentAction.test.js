@@ -5,7 +5,7 @@ import 'babel-polyfill';
 import FetchDocumentByShortIdAction from '../src/api/Document/fetchDocumentAction.js';
 
 describe('FetchDocumentByShortIdAction #run', () => {
-  it('Should have is not fetched if there was an issue with the the id', async () => {
+  it('Should have isFetched false if there was an issue with the the id', async () => {
     const DocumentGateway = { fetchDocumentByShortId: jest.fn() };
     DocumentGateway.fetchDocumentByShortId.mockReturnValue(null);
     const fetchDocument = new FetchDocumentByShortIdAction(DocumentGateway);

@@ -8,7 +8,6 @@ export default class FetchDocumentByShortIdAction {
         this.documentGateway = documentGateway;
     }
     async run({ shortId }) {
-        console.log(shortId);
         const response = {
             isFetched: false,
             isValidData: false,
@@ -16,10 +15,8 @@ export default class FetchDocumentByShortIdAction {
         };
 
         if (!shortId) {
-            console.log('no short');
             return response;
         }
-        console.log(shortId);
         response.isValidData = true;
         response.document = await this.documentGateway.fetchDocumentByShortId(shortId);
         response.isFetched = (response.document !== null);

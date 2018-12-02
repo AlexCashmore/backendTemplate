@@ -18,7 +18,6 @@ export default {
     /* controllers unpack the HttpRequest object into a simple vanilla data structure,
     and then pass that data structure to an interactor (Usecase) object  */
     const request = dependencies.controller(req.params);
-    console.log(req.params);
     if (!request) {
       next(BadRequestError());
       return;
