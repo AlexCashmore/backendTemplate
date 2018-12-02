@@ -7,7 +7,7 @@ import initializeDb from './db';
 import middleware from './middleware';
 import api from './api';
 import config from './config.json';
-import DocumentGateway from "./api/gateways/DocumentGateway";
+import DocumentGateway from "./api/Document/DocumentGateway";
 
 (async function startup() {
 let app = express();

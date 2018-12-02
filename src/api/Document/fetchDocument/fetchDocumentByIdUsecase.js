@@ -1,18 +1,15 @@
 /**
- * Created by Alex Cashmore on 11/09/2017.
+ * Created by Alex Cashmore on 30/11/2018.
  */
 
 export default async function fetchDocumentByShortIdUsecase(dependencies, { session }, request) {
-    console.log('fetch start doco');
-    // Check logic
     const response = {
         isFetched: false,
         isValidData: false,
         document: null,
     };
-    /*this should be injected into dependencies*/
+    /* Interactor implements the use case by invoking business objects (Actions) */
     async function run({ shortId }) {
-        console.log('at the run',shortId);
         const response = {
             isFetched: false,
             isValidData: false,
@@ -22,14 +19,14 @@ export default async function fetchDocumentByShortIdUsecase(dependencies, { sess
             return response;
         }
         response.isValidData = true;
-      /*  response.document = await this.documentGateway.fetchDocumentByShortId(shortId);*/
-        response.document = await this.documentGateway.fetchDocumentByShortId(shortId);
+       /* response.document = await this.documentGateway.fetchDocumentByShortId(shortId);*/
+        response.document = {documentName:'Why Clean Architecture?',documentText:'ipsum lorem'};
         response.isFetched = (response.document !== null);
         return response;
     }
-
-    //const stateDocument = await run(request);
-    const stateDocument = await dependencies.FetchDocumentByShortIdAction.run(request);
+    const stateDocument = await run(request);
+    /* The Interactor then gathers the response data into another
+    vanilla data structure and passes it back to the UI.  */
     response.isValidData = stateDocument.isValidData;
     response.isFetched = stateDocument.isFetched;
     response.document = stateDocument.document;

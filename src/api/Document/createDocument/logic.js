@@ -1,9 +1,9 @@
 /**
- * Created by Alex Cashmore on 10/10/2017.
+ * Created by Alex Cashmore on 30/11/2018.
  */
 import controller from './controller';
 import presenter from './presenter';
-import CreateDocumentAction from '../actions/CreateDocumentAction';
+import CreateDocumentAction from '../CreateDocumentAction';
 
 export default {
   build({ documentStore }) {

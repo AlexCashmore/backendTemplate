@@ -1,8 +1,8 @@
 import { version } from '../../package.json';
 import { Router } from 'express';
 import facets from './facets';
-import createDocument from './createDocument';
-import fetchDocument from './fetchDocument';
+import createDocument from './Document/createDocument';
+import fetchDocument from './Document/fetchDocument';
 
 export default ({ config, db }) => {
 	let api = Router();

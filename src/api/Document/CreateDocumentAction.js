@@ -7,8 +7,7 @@ export default class CreateDocumentAction {
         this.documentGateway = documentGateway;
         this.date = date;
     }
-    async run({ name,
-              }) {
+    async run({ name }) {
         const response = {
             isCreated: false,
             isValidData: false,

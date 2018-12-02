@@ -1,13 +1,19 @@
 /**
- * Created by Alex Cashmore on 29/09/2017.
- */
+ * Created by Alex Cashmore on 30/11/2018.
+*/
+
+/*
+The views do not know about the business objects.
+They just look in that data structure and present the response."
+* */
 export default function presenter(state) {
   if (state.isFetched) {
     return {
       success: true,
       document: {
         shortId: state.document.shortId,
-        name: state.document.name,
+          name:state.document.documentName,
+        text: state.document.documentText,
       },
     };
   }

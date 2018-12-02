@@ -1,5 +1,5 @@
 /**
- * Created by Alex Cashmore on 16/10/2017.
+ * Created by Alex Cashmore on 30/11/2018.
  */
 export default class DocumentGateway {
 
@@ -7,7 +7,6 @@ export default class DocumentGateway {
         this.client = client;
     }
     async fetchDocumentByShortId(shortId) {
-        console.log('in the fucking mongo db');
         try {
             const documents = this.client.collection('documents');
             const document = await documents.findOne({ shortId });
