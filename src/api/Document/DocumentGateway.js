@@ -18,56 +18,6 @@ export default class DocumentGateway {
             return null;
         }
     }
-/*
-
-    async searchdocuments(search) {
-        try {
-            const collection = this.client.collection('documents');
-            let cursor = null;
-            if (search.term === '') {
-                cursor = collection
-                    .find();
-            } else {
-                cursor = collection
-                    .find({
-                        $text: {
-                            $search: search.term,
-                        },
-                    });
-            }
-            if (cursor === null) {
-                return [];
-            }
-            return cursor
-                .sort(search.sort)
-                .skip(search.pageNumber * search.pageSize)
-                .limit(search.pageSize)
-                .toArray();
-        } catch (e) {
-            return null;
-        }
-    }
-*//*
-    async editdocument({
-                             _id,
-                             name,
-                             data,
-
-                         }) {
-        try {
-            const documents = this.client.collection('documents');
-            const result = await documents.updateOne({ _id }, {
-                $set: {
-                    name,
-                    data,
-                },
-            });
-            return result.modifiedCount > 0;
-        } catch (e) {
-            return false;
-        }
-    }*/
-
 
     async createDocument({
                                shortId,

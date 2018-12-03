@@ -19,8 +19,8 @@ export default async function fetchDocumentByShortIdUsecase(dependencies, { sess
             return response;
         }
         response.isValidData = true;
-       /* response.document = await this.documentGateway.fetchDocumentByShortId(shortId);*/
-        response.document = {documentName:'Why Clean Architecture?',documentText:'ipsum lorem'};
+        let mongoDocument = await this.documentGateway.fetchDocumentByShortId(shortId);
+        response.document = {documentText:'lorem ipsum'};
         response.isFetched = (response.document !== null);
         return response;
     }
